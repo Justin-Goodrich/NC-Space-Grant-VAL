@@ -1,0 +1,3 @@
+[submodule "NC-Space-Grant-Minimum-Payload"]
+	path = NC-Space-Grant-Minimum-Payload
+	url = https://github.com/Justin-Goodrich/NC-Space-Grant-Minimum-Payload.git
