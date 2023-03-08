@@ -4,7 +4,7 @@ import tensorflow as tf
 class UNet:
     def __init__(self,path,threads=None):
         self.interpreter = tf.lite.Interpreter(model_content=path,num_threads=threads)
-        self.prerpare_model()
+        self.prepare_model()
 
     def prepare_model(self):
         self.interpreter.allocate_tensors()
@@ -16,3 +16,4 @@ class UNet:
         self.interpreter.invoke()
         output = self.interpreter.get_tensor(self.output['index'])
         return output
+    
