@@ -4,7 +4,7 @@ import time
 import cv2 
 import numpy as np
 from camera.CameraController import  VideoCamera, ImageCamera
-from UNet import UNet
+from UNet.UNet import UNet
 from gpiozero import InputDevice
 import threading
 
@@ -15,9 +15,11 @@ HEIGHT_0 = 1080
 WIDTH_1 = 512
 HEIGHT_1 = 512
 
+VIDEO_FILENAME = './flight.avi'
+
 landing_phase = [True]
 input_pin = InputDevice(INPUT_PIN,True)
-video = VideoCamera(0,'flight.mp4',FPS,(WIDTH_0,WIDTH_1))
+video = VideoCamera(0,VIDEO_FILENAME,FPS,(WIDTH_0,HEIGHT_0))
 
 Unet = UNet('models/model.tflite',5)
 

@@ -51,8 +51,9 @@ class ImageCamera(CameraController):
 class VideoCamera(CameraController):
     def __init__(self,id=0,filename=None, frame_rate=50, size=(2028,1080)):
         super().__init__(id)
-        self.fourcc = cv2.VideoWriter_fourcc(*'avc1')
+        self.fourcc = cv2.VideoWriter_fourcc(*'XVID')
         self.Writer = cv2.VideoWriter(filename,self.fourcc,frame_rate,size)
+        self.set_size(size[0],size[1])
     
     def take_video(self,flag,time_limit):
         t = time.time()

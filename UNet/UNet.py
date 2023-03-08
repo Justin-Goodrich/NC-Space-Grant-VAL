@@ -1,9 +1,9 @@
 import numpy as np
-import tensorflow as tf
+from tflite_runtime.interpreter import Interpreter
 
 class UNet:
     def __init__(self,path,threads=None):
-        self.interpreter = tf.lite.Interpreter(model_content=path,num_threads=threads)
+        self.interpreter = Interpreter(model_path=path,num_threads=threads)
         self.prepare_model()
 
     def prepare_model(self):
